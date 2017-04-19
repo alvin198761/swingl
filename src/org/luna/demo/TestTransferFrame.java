@@ -5,23 +5,23 @@
  */
 package org.luna.demo;
 
-import org.luna.swingl.SLSoftKeyboard;
+import java.util.Vector;
+import org.luna.swingl.SLTransfer;
 
 /**
- * 软键盘示例 <br/>
- * QQ: 2273410177<br/>
+ *
  * @author tangzhichao
  */
-public class TestKeyBoardFrame extends javax.swing.JFrame {
+public class TestTransferFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form TestKeyBoard
+     * Creates new form TestTransferFrame
      */
-    public TestKeyBoardFrame() {
+    public TestTransferFrame() {
         initComponents();
-        setTitle("软键盘示例");
-        jTextField1.setText("");
-        new SLSoftKeyboard(jTextField1);
+        setTitle("穿梭机测试");
+
+        initDefaultData();
     }
 
     /**
@@ -33,27 +33,17 @@ public class TestKeyBoardFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextField1.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -76,26 +66,37 @@ public class TestKeyBoardFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestTransferFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestTransferFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestTransferFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestTransferFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TestKeyBoardFrame().setVisible(true);
+                new TestTransferFrame().setVisible(true);
             }
         });
     }
 
+    private void initDefaultData() {
+        Vector<String> source = new Vector<String>();
+        for (int i = 0; i < 5; i++) {
+            source.add("source" + i);
+        }
+
+        Vector<String> dist = new Vector<String>();
+        for (int i = 0; i < 5; i++) {
+            dist.add("target" + i);
+        }
+        setContentPane(new SLTransfer(source, dist));
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

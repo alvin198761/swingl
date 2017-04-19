@@ -32,8 +32,9 @@ import javax.swing.text.JTextComponent;
 
 /**
  * 软键盘
- *
- * @author tangzhichao
+ * QQ群：481434622
+ * @author QQ :444716720
+ * 整理：QQ: 2273410177
  */
 public class SLSoftKeyboard extends JPopupMenu {
 

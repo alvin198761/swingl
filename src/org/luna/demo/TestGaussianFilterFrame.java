@@ -18,7 +18,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import org.luna.image.gaussianfilter.GaussianFilter;
 
 /**
- *
+ * 高斯模糊示例 <br/>
+ * QQ: 2273410177<br/>
  * @author tangzhichao
  */
 public class TestGaussianFilterFrame extends javax.swing.JFrame {
