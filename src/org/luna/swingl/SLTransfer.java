@@ -8,6 +8,7 @@ package org.luna.swingl;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.Consumer;
 import javax.swing.AbstractAction;
 import static javax.swing.Action.NAME;
 import static javax.swing.Action.SHORT_DESCRIPTION;
@@ -43,10 +44,14 @@ public class SLTransfer<T extends Object> extends javax.swing.JComponent {
 
     private void initList(JList list, Collection data) {
         list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        DefaultListModel sourceModel = new DefaultListModel();
-        data.forEach(item -> {
-            sourceModel.addElement(item);
+        final DefaultListModel sourceModel = new DefaultListModel();
+        data.iterator().forEachRemaining(new Consumer<Object>() {
+            @Override
+            public void accept(Object item) {
+                sourceModel.addElement(item);
+            }
         });
+
         list.setModel(sourceModel);
         list.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
