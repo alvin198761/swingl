@@ -11,13 +11,14 @@ import org.luna.swingl.SLSoftKeyboard;
  *
  * @author tangzhichao
  */
-public class TestKeyBoard extends javax.swing.JFrame {
+public class TestKeyBoardFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form TestKeyBoard
      */
-    public TestKeyBoard() {
+    public TestKeyBoardFrame() {
         initComponents();
+        setTitle("软键盘示例");
         jTextField1.setText("");
         new SLSoftKeyboard(jTextField1);
     }
@@ -74,20 +75,21 @@ public class TestKeyBoard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TestKeyBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestKeyBoardFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TestKeyBoard().setVisible(true);
+                new TestKeyBoardFrame().setVisible(true);
             }
         });
     }
