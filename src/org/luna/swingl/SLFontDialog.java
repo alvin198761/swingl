@@ -28,18 +28,18 @@ import javax.swing.event.ListSelectionListener;
  *
  * @author tangzhichao
  */
-public class JFontDialog extends javax.swing.JDialog {
+public class SLFontDialog extends javax.swing.JDialog {
 
     private Font selectedFont;
 
     /**
      * Creates new form JFontDialog
      */
-    public JFontDialog() {
+    public SLFontDialog() {
         this(new Font("宋体", Font.PLAIN, 12));
     }
 
-    public JFontDialog(Font font) {
+    public SLFontDialog(Font font) {
         initComponents();
         this.selectedFont = font;
         this.setModal(true);
@@ -400,7 +400,7 @@ public class JFontDialog extends javax.swing.JDialog {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JFontDialog.this.setVisible(false);
+            SLFontDialog.this.setVisible(false);
         }
     }
 
@@ -413,45 +413,7 @@ public class JFontDialog extends javax.swing.JDialog {
         @Override
         public void actionPerformed(ActionEvent e) {
             selectedFont = null;
-            JFontDialog.this.setVisible(false);
+            SLFontDialog.this.setVisible(false);
         }
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            javax.swing.UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFontDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFontDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFontDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFontDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JFontDialog dialog = new JFontDialog();
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-                System.out.println(dialog.getSelectedFont());
-            }
-        });
     }
 }
